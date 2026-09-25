@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SandoSys | System Initialization</title>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/png" href="icon.png">
+    
+    <style>
+        :root {
+            /* SandoSys Brand Palette */
+            --bg-dark: #1b222a;
+            --panel-bg: rgba(60, 68, 79, 0.45);
+            --panel-border: rgba(140, 161, 180, 0.25);
+            --accent-waterfall: #64c5fc;
+            --text-light: #8ca1b4;
+            --text-shuttle: #5e6670;
+            --white: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden; 
+            padding: 2rem 1rem; 
+            position: relative;
+        }
+
+        /* Subtle animated background to contrast the glass */
+        .ambient-background {
+            position: fixed; 
+            top: 50%;
+            left: 50%;
+            width: 150vw;
+            height: 150vh;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle at center, rgba(100, 197, 252, 0.08) 0%, rgba(27, 34, 42, 0) 60%);
+            z-index: -1;
+            animation: pulse 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        /* Glassmorphism Container */
+        .glass-container {
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--panel-border);
+            border-radius: 20px;
+            padding: 3rem 4rem;
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: floatIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes floatIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 140px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 12px rgba(100, 197, 252, 0.4));
+            transition: filter 0.3s ease;
+        }
+
+        .logo:hover {
+            filter: drop-shadow(0 0 20px rgba(100, 197, 252, 0.7));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--accent-waterfall));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(100, 197, 252, 0.1);
+            color: var(--accent-waterfall);
+            border: 1px solid rgba(100, 197, 252, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .terminal-box {
+            background: rgba(27, 34, 42, 0.8);
+            border-left: 3px solid var(--accent-waterfall);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--text-shuttle);
+            text-align: left;
+        }
+
+        .terminal-box span {
+            color: var(--accent-waterfall);
+        }
+
+        footer {
+            margin-top: 3rem;
+            color: var(--text-shuttle);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .contact-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-waterfall);
+        }
+
+        @media (max-width: 600px) {
+            .glass-container {
+                padding: 2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .logo {
+                width: 110px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-background"></div>
+
+    <main class="glass-container">
+        <!-- Direct PostIMG Link for SandoSys Logo -->
+        <img src="https://i.postimg.cc/HWKDjGKh/IMG-9591.png" alt="SandoSys Logo" class="logo">
+        
+        <h1>SANDOSYS</h1>
+        <div class="badge">Migration in Progress</div>
+        
+        <p>The infrastructure is officially evolving. We are in the process of permanently migrating from the <span class="highlight">NullForge.tech</span> era to our new, dedicated home here at <span class="highlight">SandoSys.com</span>.</p>
+        
+        <p>This domain is here to stay. This is a temporary landing page while the custom dashboards, tools, and server architecture are being prepped for deployment.</p>
+
+        <div class="terminal-box">
+            > system_status: <span>standby</span><br>
+            > origin_node: <span>nullforge</span><br>
+            > destination: <span>sandosys_core</span><br>
+            > awaiting_deployment...
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Jack Sandoval<br>
+        Contact me at: <a href="mailto:jacks92780912@gmail.com" class="contact-link">jack92780912@gmail.com</a>
+    </footer>
+
+</body>
+</html>
