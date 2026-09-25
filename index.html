@@ -81,16 +81,24 @@
             }
         }
 
-        .logo {
+        .logo-wrapper {
             width: 140px;
             height: auto;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             filter: drop-shadow(0 0 12px rgba(100, 197, 252, 0.4));
             transition: filter 0.3s ease;
         }
 
-        .logo:hover {
+        .logo-wrapper:hover {
             filter: drop-shadow(0 0 20px rgba(100, 197, 252, 0.7));
+        }
+
+        .logo {
+            width: 100%;
+            height: auto;
         }
 
         h1 {
@@ -171,7 +179,7 @@
             h1 {
                 font-size: 2rem;
             }
-            .logo {
+            .logo-wrapper {
                 width: 110px;
             }
         }
@@ -183,7 +191,9 @@
 
     <main class="glass-container">
         <!-- Direct PostIMG Link for SandoSys Logo -->
-        <img src="https://i.postimg.cc/HWKDjGKh/IMG-9591.png" alt="SandoSys Logo" class="logo">
+        <div class="logo-wrapper">
+            <img src="https://i.postimg.cc/HWKDjGKh/IMG-9591.png" alt="SandoSys Logo" class="logo">
+        </div>
         
         <h1>SANDOSYS</h1>
         <div class="badge">Migration in Progress</div>
@@ -202,7 +212,7 @@
 
     <footer>
         &copy; 2026 Jack Sandoval<br>
-        Contact me at: <a href="mailto:jacks92780912@gmail.com" class="contact-link">jack92780912@gmail.com</a>
+        Contact me at: <a href="mailto:jacks92780912@gmail.com" class="contact-link">jacks92780912@gmail.com</a>
     </footer>
 
 </body>
