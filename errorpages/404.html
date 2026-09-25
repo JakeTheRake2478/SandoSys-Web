@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Page Not Found</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    
+    <style>
+        :root {
+            /* SandoSys Brand Palette */
+            --bg-dark: #1b222a;
+            --panel-bg: rgba(60, 68, 79, 0.45);
+            --panel-border: rgba(140, 161, 180, 0.25);
+            --accent-waterfall: #64c5fc;
+            --text-light: #8ca1b4;
+            --text-shuttle: #5e6670;
+            --white: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden; 
+            padding: 2rem 1rem; 
+            position: relative;
+        }
+
+        /* Top Right Logo Placement */
+        .logo-top-right {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 80px;
+            height: auto;
+            filter: drop-shadow(0 0 8px rgba(100, 197, 252, 0.3));
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo-top-right:hover {
+            filter: drop-shadow(0 0 15px rgba(100, 197, 252, 0.6));
+            transform: scale(1.05);
+        }
+
+        .ambient-background {
+            position: fixed; 
+            top: 50%;
+            left: 50%;
+            width: 150vw;
+            height: 150vh;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle at center, rgba(100, 197, 252, 0.08) 0%, rgba(27, 34, 42, 0) 60%);
+            z-index: -1;
+            animation: pulse 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        .glass-container {
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--panel-border);
+            border-radius: 20px;
+            padding: 3rem 4rem;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes floatIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, var(--accent-waterfall));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .terminal-box {
+            background: rgba(27, 34, 42, 0.8);
+            border-left: 3px solid var(--text-shuttle);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 2.5rem;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--text-shuttle);
+            text-align: left;
+        }
+
+        .terminal-box span {
+            color: var(--accent-waterfall);
+        }
+
+        .terminal-box .error-text {
+            color: #ff6b6b; /* Subtle red for the 404 status */
+        }
+
+        .btn-return {
+            display: inline-block;
+            background: rgba(100, 197, 252, 0.1);
+            color: var(--accent-waterfall);
+            border: 1px solid rgba(100, 197, 252, 0.4);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-return:hover {
+            background: rgba(100, 197, 252, 0.2);
+            box-shadow: 0 0 15px rgba(100, 197, 252, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .logo-top-right {
+                top: 1.5rem;
+                right: 1.5rem;
+                width: 60px;
+            }
+            .glass-container {
+                padding: 2.5rem 1.5rem;
+                margin-top: 3rem;
+            }
+            .error-code {
+                font-size: 4.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Right Logo -->
+    <a href="/">
+        <img src="https://i.postimg.cc/HWKDjGKh/IMG-9591.png" alt="SandoSys Logo" class="logo-top-right">
+    </a>
+
+    <div class="ambient-background"></div>
+
+    <main class="glass-container">
+        
+        <div class="error-code">404</div>
+        <h1>Resource Not Found</h1>
+        
+        <p>The requested URL or page could not be found on this server. It may have been removed during the SandoSys migration, or the address was typed incorrectly.</p>
+
+        <div class="terminal-box">
+            > http_status: <span class="error-text">404</span><br>
+            > server_response: <span class="error-text">not_found</span><br>
+            > troubleshooting: <span>verify_url_path</span>
+        </div>
+
+        <a href="/" class="btn-return">Return to Dashboard</a>
+        
+    </main>
+
+</body>
+</html>
